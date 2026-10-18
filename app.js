@@ -1,51 +1,46 @@
-// Menú móvil
+// Número de WhatsApp: solo dígitos, con código de país y sin "+".
+// Un móvil chileno tiene 11 dígitos (56 + 9 + 8 dígitos). Revisa que este esté completo.
+const WHATSAPP_NUMBER = "5695521699";
+
 const menuToggle = document.querySelector("#menuToggle");
 const mainNav = document.querySelector("#mainNav");
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = mainNav.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+function setMenu(open) {
+  mainNav.classList.toggle("open", open);
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+  menuToggle.textContent = open ? "✕" : "☰";
+}
+
+menuToggle.addEventListener("click", () => setMenu(!mainNav.classList.contains("open")));
+mainNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+document.addEventListener("click", (e) => {
+  if (!mainNav.contains(e.target) && !menuToggle.contains(e.target)) setMenu(false);
 });
 
-mainNav.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    mainNav.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-  });
-});
-
-// Año automático en el pie de página
 document.querySelector("#year").textContent = new Date().getFullYear();
 
-// Los enlaces de servicio seleccionan automáticamente la opción del formulario
+// Los botones de servicio y plan preseleccionan el formulario
+const serviceSelect = document.querySelector("#service");
+const messageBox = document.querySelector("#message");
+
 document.querySelectorAll("[data-service]").forEach((link) => {
   link.addEventListener("click", () => {
-    const serviceSelect = document.querySelector("#service");
-    const wanted = link.dataset.service;
-    const option = [...serviceSelect.options].find((item) => item.text === wanted);
+    const option = [...serviceSelect.options].find((item) => item.text === link.dataset.service);
     if (option) serviceSelect.value = option.value;
+    if (link.dataset.plan && !messageBox.value.trim()) {
+      messageBox.value = `Quiero consultar por el plan ${link.dataset.plan}.`;
+    }
   });
 });
 
-// Formulario de contacto: prepara un mensaje para WhatsApp.
-// IMPORTANTE: reemplaza el número de ejemplo por el número de Nexati en formato internacional,
-// solo dígitos, incluyendo código de país (Chile: 56), sin +, espacios ni guiones.
-const WHATSAPP_NUMBER = "569XXXXXXXX";
-
+// El formulario prepara un mensaje de WhatsApp para que lo revises antes de enviarlo
 document.querySelector("#contactForm").addEventListener("submit", (event) => {
   event.preventDefault();
-
-  if (WHATSAPP_NUMBER.includes("X")) {
-    alert("Antes de usar el formulario, abre app.js y reemplaza 569XXXXXXXX por tu número de WhatsApp en formato internacional.");
-    return;
-  }
-
   const name = document.querySelector("#name").value.trim();
-  const service = document.querySelector("#service").value;
-  const message = document.querySelector("#message").value.trim();
-
-  const text = `Hola Nexati, soy ${name}. Me interesa: ${service}. Consulta: ${message}`;
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-  window.open(url, "_blank", "noopener,noreferrer");
+  const service = serviceSelect.value;
+  const message = messageBox.value.trim();
+  const text = `Hola, soy ${name}. Me interesa: ${service}. Consulta: ${message}`;
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
 });
