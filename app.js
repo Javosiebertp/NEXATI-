@@ -44,3 +44,6 @@ document.querySelector("#contactForm").addEventListener("submit", (event) => {
   const text = `Hola, soy ${name}. Me interesa: ${service}. Consulta: ${message}`;
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
 });
+
+// Botón flotante de WhatsApp
+document.querySelector("#waFloat").href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hola, quiero consultar por soporte técnico.")}`;
