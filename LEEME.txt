@@ -1,0 +1,25 @@
+ISAR SIEPA DIGITAL — SITIO WEB
+
+ARCHIVOS
+- index.html: estructura y contenido de la página.
+- styles.css: diseño visual adaptable a celular y computador.
+- app.js: menú móvil, año automático y formulario de WhatsApp.
+
+ANTES DE PUBLICAR
+1. Abre app.js.
+2. Busca: const WHATSAPP_NUMBER = "569XXXXXXXX";
+3. Reemplaza 569XXXXXXXX por tu número comercial de WhatsApp con código de país, solo dígitos. Para Chile suele comenzar con 56 y el número móvil con 9. No uses +, espacios ni guiones.
+4. Guarda el archivo.
+5. Prueba index.html en tu navegador. El formulario no enviará mensajes mientras el número siga siendo un marcador.
+
+PUBLICAR EN EL REPOSITORIO EXISTENTE
+1. Haz una copia de seguridad de los archivos actuales.
+2. Entra a https://github.com/javosiebertp/NEXATI- y abre la pestaña Code.
+3. En la raíz del repositorio, sube index.html, styles.css y app.js y confirma el reemplazo de los archivos del mismo nombre.
+4. Pulsa Commit changes para guardar los cambios.
+5. Espera unos minutos y revisa https://javosiebertp.github.io/NEXATI-/ .
+
+NOTAS
+- Los tres proyectos de la sección Portafolio están identificados como demostraciones; no se presentan como trabajos de clientes.
+- El formulario usa WhatsApp y requiere configurar el número. No hay backend ni envío de correo automático.
+- El sitio utiliza Google Fonts si hay conexión a internet; con la fuente local del sistema seguirá siendo legible si no carga.

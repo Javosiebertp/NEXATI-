@@ -1,181 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#07111f">
-  <meta name="description" content="Nexati: soporte técnico, desarrollo web y ciberseguridad en un solo lugar, en Concepción. Atención directa de Javier Siebert Parot.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://javosiebertp.github.io/NEXATI-/">
-  <meta property="og:image" content="https://javosiebertp.github.io/NEXATI-/img/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="og:locale" content="es_CL">
-  <meta property="og:title" content="Nexati | Soporte TI, Web y Ciberseguridad en Concepción">
-  <meta property="og:description" content="Soporte técnico, páginas web y ciberseguridad con un solo responsable.">
-  <title>Nexati | Soporte TI, Web y Ciberseguridad en Concepción</title>
-  <link rel="icon" href="logo/favicon.ico" sizes="any">
-  <link rel="icon" href="logo/nexati-icono.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="logo/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071426">
+  <meta name="description" content="ISAR SIEPA Digital crea páginas web, aplicaciones web y software a medida para pymes y emprendimientos en Chile.">
+  <title>ISAR SIEPA Digital | Desarrollo web y software</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Nexati, inicio">
-      <img src="logo/nexati-logo-fondo-oscuro.svg" alt="Nexati" width="124" height="31">
+    <a class="brand" href="#inicio" aria-label="ISAR SIEPA Digital, inicio">
+      <span class="brand-symbol" aria-hidden="true">IS</span>
+      <span class="brand-name">ISAR SIEPA<span> DIGITAL</span></span>
     </a>
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">☰</button>
-    <nav id="mainNav">
+    <nav class="main-nav" id="mainNav">
       <a href="#servicios">Servicios</a>
-      <a href="#planes">Planes</a>
+      <a href="#proyectos">Proyectos</a>
       <a href="#proceso">Cómo trabajamos</a>
-      <a href="#nosotros">Nosotros</a>
-      <a class="nav-cta" href="#contacto">Solicitar atención</a>
+      <a class="nav-cta" href="#contacto">Cotizar proyecto <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
   <main>
-    <section class="hero" id="inicio">
-      <div class="hero-content">
-        <p class="eyebrow"><span class="status-dot"></span> SOPORTE TI EN CONCEPCIÓN</p>
-        <h1>Soporte, web y seguridad<br><span>en un solo lugar.</span></h1>
-        <p class="hero-copy">Un solo profesional para tus equipos, tu página web y la seguridad de tu información. Sin intermediarios y con alguien que conoce todo tu entorno.</p>
+    <section class="hero section-wrap" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse-dot"></span> ESTUDIO DIGITAL INDEPENDIENTE · CHILE</p>
+        <h1>Ideas que se convierten en <span class="gradient-text">soluciones digitales.</span></h1>
+        <p class="hero-description">Diseñamos páginas web y desarrollamos software para pymes y emprendimientos que quieren crecer, trabajar mejor y llegar a más clientes.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#contacto">Solicitar atención <span>↗</span></a>
-          <a class="button button-secondary" href="#planes">Ver planes</a>
+          <a class="button button-primary" href="#contacto">Hablemos de tu proyecto <span aria-hidden="true">→</span></a>
+          <a class="button button-ghost" href="#servicios">Conocer servicios</a>
         </div>
-        <div class="hero-note"><span class="mini-shield">✓</span> Atención directa · Soluciones prácticas</div>
+        <div class="hero-proof"><span class="proof-icon">⌘</span><span>Diseño moderno</span><i></i><span>Experiencia adaptable</span><i></i><span>Soluciones a medida</span></div>
       </div>
-      <div class="hero-visual" aria-hidden="true">
+      <div class="hero-visual" aria-label="Ilustración decorativa de desarrollo de software">
         <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="tech-card">
-          <div class="tech-card-top"><span class="window-dots">● ● ●</span><span>nexati / system</span></div>
-          <div class="terminal-line"><span class="terminal-green">✓</span> Diagnóstico completado</div>
-          <div class="terminal-line"><span class="terminal-green">✓</span> Respaldo realizado</div>
-          <div class="terminal-line"><span class="terminal-blue">›</span> Solución lista<span class="cursor">_</span></div>
-          <div class="progress-label"><span>Rendimiento del sistema</span><b>Optimizado</b></div>
-          <div class="progress-track"><span></span></div>
+        <div class="code-window">
+          <div class="window-bar"><div class="window-dots"><b></b><b></b><b></b></div><span>isar-siepa.dev</span><span class="window-lock">⌑</span></div>
+          <div class="code-content">
+            <p><span class="code-muted">01</span> <span class="code-purple">const</span> <span class="code-blue">idea</span> = {</p>
+            <p class="indent"><span class="code-green">objetivo</span>: <span class="code-yellow">"hacer crecer tu negocio"</span>,</p>
+            <p class="indent"><span class="code-green">diseño</span>: <span class="code-yellow">"claro y moderno"</span>,</p>
+            <p class="indent"><span class="code-green">tecnologia</span>: <span class="code-yellow">"a tu medida"</span></p>
+            <p>};</p>
+            <p class="code-run"><span>✓</span> Proyecto listo para comenzar</p>
+          </div>
+          <div class="visual-footer"><span class="visual-chip"><b>⌘</b> WEB</span><span class="visual-chip"><b>◇</b> SOFTWARE</span><span class="visual-chip"><b>↗</b> APPS</span></div>
         </div>
-        <div class="floating-chip chip-top"><span>⌘</span> Soporte TI</div>
-        <div class="floating-chip chip-bottom"><span>⌁</span> Desarrollo web</div>
+        <div class="floating-badge badge-top"><span>✦</span><div><b>Diseño responsive</b><small>Se adapta a cada pantalla</small></div></div>
+        <div class="floating-badge badge-bottom"><span class="badge-check">✓</span><div><b>Hecho para tu negocio</b><small>Tu idea, nuestro próximo proyecto</small></div></div>
       </div>
     </section>
 
-    <section class="trust-strip" aria-label="Características">
-      <div><span class="strip-icon">◈</span> Un solo responsable</div>
-      <div><span class="strip-icon">⌁</span> Del equipo a la web</div>
-      <div><span class="strip-icon">✓</span> Seguridad desde el inicio</div>
-    </section>
-
-    <section class="section services-section" id="servicios">
-      <div class="section-heading">
-        <p class="eyebrow">QUÉ PODEMOS HACER</p>
-        <h2>Tres áreas que se conectan,<br><span>un solo responsable.</span></h2>
-        <p>Tu página, tus equipos y tus datos dependen unos de otros. Los cuidamos como un solo sistema.</p>
-      </div>
+    <section class="services section-wrap" id="servicios">
+      <div class="section-heading"><p class="eyebrow">LO QUE HACEMOS</p><h2>Tecnología con un propósito.</h2><p>Soluciones digitales prácticas, pensadas para las necesidades reales de tu negocio.</p></div>
       <div class="service-grid">
-        <article class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><p class="service-number">01 / SOPORTE</p>
-          <h3>Soporte informático</h3>
-          <p>Mantenimiento y optimización de equipos, instalación de software y licencias, redes y ayuda con problemas técnicos.</p>
-          <a href="#contacto" class="service-link" data-service="Soporte informático">Consultar servicio <span>↗</span></a>
-        </article>
-        <article class="service-card featured">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></svg></div><p class="service-number">02 / DESARROLLO</p>
-          <h3>Páginas web</h3>
-          <p>Sitios modernos para emprendedores y pymes, adaptables a celulares, fáciles de navegar y publicados con buenas prácticas de seguridad.</p>
-          <a href="#contacto" class="service-link" data-service="Desarrollo de páginas web">Consultar servicio <span>↗</span></a>
-        </article>
-        <article class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><p class="service-number">03 / SEGURIDAD</p>
-          <h3>Ciberseguridad</h3>
-          <p>Respaldos, actualizaciones, configuración segura y buenas prácticas para proteger tus equipos, tu correo y tu sitio.</p>
-          <a href="#contacto" class="service-link" data-service="Ciberseguridad">Consultar servicio <span>↗</span></a>
-        </article>
-      </div>
-      <div class="coming-soon"><span class="coming-icon">✳</span><div><b>En desarrollo: Nexati Control TI</b><p>Una herramienta propia para organizar clientes, solicitudes y órdenes de trabajo. Pronto compartiremos avances.</p></div><span class="coming-tag">PRÓXIMAMENTE</span></div>
-    </section>
-
-    <section class="section services-section" id="planes" style="padding-top:0">
-      <div class="section-heading">
-        <p class="eyebrow">PLANES DE SOPORTE</p>
-        <h2>Elige el nivel de atención<br><span>que necesita tu equipo.</span></h2>
-      </div>
-      <div class="service-grid">
-        <article class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
-          <h3>Básico</h3>
-          <p>Mantenimiento esencial y configuración de software.</p>
-          <p class="plan-price">$25.000</p>
-          <a href="#contacto" class="service-link" data-service="Soporte informático" data-plan="Básico">Consultar este plan <span>↗</span></a>
-        </article>
-        <article class="service-card">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>Intermedio</h3>
-          <p>Solución integral con optimización y seguridad reforzada.</p>
-          <p class="plan-price">$35.000</p>
-          <a href="#contacto" class="service-link" data-service="Soporte informático" data-plan="Intermedio">Consultar este plan <span>↗</span></a>
-        </article>
-        <article class="service-card featured">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></div>
-          <h3>Full</h3>
-          <p>Mantenimiento completo, protección y respaldo confiable.</p>
-          <p class="plan-price">$45.000</p>
-          <a href="#contacto" class="service-link" data-service="Soporte informático" data-plan="Full">Consultar este plan <span>↗</span></a>
-        </article>
-      </div>
-      <p class="plan-note">Valores de referencia. El valor final se confirma antes de comenzar.</p>
-    </section>
-
-    <section class="process-section" id="proceso">
-      <div class="section process-layout">
-        <div class="process-intro"><p class="eyebrow">SIMPLE Y TRANSPARENTE</p><h2>De la consulta<br>a la <span>solución.</span></h2><p>Queremos que sepas qué haremos, por qué y cuál será el siguiente paso.</p></div>
-        <div class="process-steps">
-          <div class="process-step"><span>01</span><div><h3>Cuéntanos qué necesitas</h3><p>Nos explicas el problema o la idea que quieres desarrollar.</p></div></div>
-          <div class="process-step"><span>02</span><div><h3>Evaluamos y cotizamos</h3><p>Definimos el alcance, los tiempos estimados y el valor antes de comenzar.</p></div></div>
-          <div class="process-step"><span>03</span><div><h3>Trabajamos contigo</h3><p>Ejecutamos el servicio y te mantenemos al tanto del avance.</p></div></div>
-        </div>
+        <article class="service-card"><div class="service-icon">⌘</div><p class="card-number">01 / WEB</p><h3>Desarrollo web</h3><p>Páginas profesionales que presentan tu negocio, explican tus servicios y ayudan a convertir visitas en oportunidades.</p><ul><li>Sitios corporativos</li><li>Landing pages</li><li>Diseño adaptable a celulares</li></ul><a href="#contacto" class="text-link" data-service="Desarrollo web">Cotizar una web <span>→</span></a></article>
+        <article class="service-card service-card-featured"><div class="featured-label">A TU MEDIDA</div><div class="service-icon">{ }</div><p class="card-number">02 / SOFTWARE</p><h3>Software personalizado</h3><p>Herramientas digitales para simplificar procesos, organizar información y reducir tareas repetitivas.</p><ul><li>Formularios y automatización</li><li>Paneles administrativos</li><li>Gestión de datos</li></ul><a href="#contacto" class="text-link" data-service="Software personalizado">Conversar una idea <span>→</span></a></article>
+        <article class="service-card"><div class="service-icon">▣</div><p class="card-number">03 / APLICACIONES</p><h3>Aplicaciones web</h3><p>Sistemas accesibles desde el navegador para que tus clientes o tu equipo trabajen desde distintos dispositivos.</p><ul><li>Reservas y solicitudes</li><li>Portales de clientes</li><li>Prototipos funcionales</li></ul><a href="#contacto" class="text-link" data-service="Aplicaciones web">Desarrollar una app <span>→</span></a></article>
       </div>
     </section>
 
-    <section class="section about-section" id="nosotros">
-      <div class="about-badge"><span class="brand-mark">N</span><img class="about-photo" src="img/javier.jpg" alt="Javier Siebert Parot" width="140" height="140" loading="lazy" hidden onload="this.previousElementSibling.remove();this.hidden=false"><span>TECNOLOGÍA CON PROPÓSITO</span></div>
-      <div class="about-text">
-        <p class="eyebrow">QUIÉN ESTÁ DETRÁS</p>
-        <h2>Atención directa,<br>sin complicaciones.</h2>
-        <p>Soy <strong>Javier Siebert Parot</strong>, especialista en soporte técnico TI. Resuelvo incidencias de redes, hardware y software, doy mantenimiento a sistemas y desarrollo sitios web. Como trabajo en soporte, web y ciberseguridad, puedo cuidar tu equipo, tu página y tus datos como un solo sistema, con trato directo y soluciones que aporten valor.</p>
-        <p class="about-area">Atención en Concepción y alrededores.</p>
+    <section class="projects section-wrap" id="proyectos">
+      <div class="section-heading section-heading-row"><div><p class="eyebrow">PORTAFOLIO</p><h2>Ideas en construcción.</h2></div><p>Estos ejemplos ilustran el tipo de soluciones que podemos desarrollar. Los proyectos demostrativos se identificarán como tales.</p></div>
+      <div class="project-grid">
+        <article class="project-card project-blue"><div class="project-art art-web"><div class="mini-browser"><div class="mini-browser-bar"><b></b><b></b><b></b></div><div class="mini-hero"><span></span><span></span><i></i></div><div class="mini-cards"><b></b><b></b><b></b></div></div></div><div class="project-info"><span class="project-type">DEMO · DESARROLLO WEB</span><h3>Web para emprendimiento</h3><p>Una presencia digital clara para presentar servicios y recibir consultas.</p></div></article>
+        <article class="project-card project-violet"><div class="project-art art-dashboard"><div class="dash-ui"><div class="dash-side"></div><div class="dash-main"><span></span><span></span><div class="dash-chart"></div><div class="dash-rows"><b></b><b></b><b></b></div></div></div></div><div class="project-info"><span class="project-type">DEMO · SOFTWARE</span><h3>Panel de gestión</h3><p>Una interfaz de ejemplo para organizar datos y revisar información clave.</p></div></article>
+        <article class="project-card project-cyan"><div class="project-art art-app"><div class="phone-ui"><div class="phone-notch"></div><span></span><span></span><div class="phone-button"></div><div class="phone-list"><b></b><b></b><b></b></div></div></div><div class="project-info"><span class="project-type">DEMO · APLICACIÓN WEB</span><h3>Portal de solicitudes</h3><p>Un punto de partida para recibir solicitudes y hacer seguimiento a procesos.</p></div></article>
       </div>
     </section>
 
-    <section class="contact-section" id="contacto">
-      <div class="contact-panel">
-        <div><p class="eyebrow">¿LO VEMOS?</p><h2>Cuéntanos qué necesitas.<br><span>Busquemos una solución.</span></h2><p>Escríbenos para consultar por soporte, una página web o una solución tecnológica para tu negocio.</p></div>
-        <form id="contactForm">
-          <label for="name">Tu nombre</label><input id="name" name="name" required autocomplete="name" placeholder="¿Cómo te llamas?">
-          <label for="service">¿En qué te podemos ayudar?</label>
-          <select id="service" name="service"><option>Soporte informático</option><option>Desarrollo de páginas web</option><option>Ciberseguridad</option><option>Nexati Control TI</option><option>Otra consulta</option></select>
-          <label for="message">Cuéntanos brevemente</label><textarea id="message" name="message" rows="3" required placeholder="Describe lo que necesitas"></textarea>
-          <button class="button button-primary submit-button" type="submit">Preparar mensaje por WhatsApp <span>↗</span></button>
-          <small>El mensaje se abrirá en WhatsApp para que puedas revisarlo antes de enviarlo.</small>
+    <section class="process section-wrap" id="proceso">
+      <div class="section-heading"><p class="eyebrow">CÓMO TRABAJAMOS</p><h2>De la idea al siguiente paso.</h2><p>Un proceso claro para que sepas qué estamos construyendo y por qué.</p></div>
+      <div class="process-grid"><article><span>01</span><h3>Nos cuentas</h3><p>Conversamos sobre tu negocio, tus objetivos y el problema que quieres resolver.</p></article><article><span>02</span><h3>Definimos</h3><p>Acordamos alcance, funcionalidades, plazos y presupuesto antes de comenzar.</p></article><article><span>03</span><h3>Construimos</h3><p>Desarrollamos una solución y revisamos contigo los avances.</p></article><article><span>04</span><h3>Publicamos</h3><p>Probamos el resultado y coordinamos la entrega y los próximos pasos.</p></article></div>
+    </section>
+
+    <section class="contact section-wrap" id="contacto">
+      <div class="contact-panel"><div class="contact-copy"><p class="eyebrow">HAGAMOS ALGO BUENO</p><h2>Cuéntanos tu idea.<br><span class="gradient-text">La llevamos a digital.</span></h2><p>Cuéntanos brevemente qué necesitas. Podemos conversar sobre una página web, un sistema o una aplicación para tu negocio.</p><div class="contact-note"><span>✦</span> Sin compromiso: primero entendemos tu proyecto.</div></div>
+        <form id="contactForm" class="contact-form">
+          <label for="name">Tu nombre</label><input id="name" name="name" type="text" placeholder="Nombre y apellido" required>
+          <label for="business">Nombre del negocio <span>(opcional)</span></label><input id="business" name="business" type="text" placeholder="Tu emprendimiento o empresa">
+          <label for="service">¿Qué necesitas?</label><select id="service" name="service" required><option value="">Selecciona un servicio</option><option>Desarrollo web</option><option>Software personalizado</option><option>Aplicaciones web</option><option>Necesito orientación</option></select>
+          <label for="details">Cuéntanos un poco más</label><textarea id="details" name="details" rows="3" placeholder="¿Qué te gustaría crear?" required></textarea>
+          <button class="button button-primary submit-button" type="submit">Preparar consulta por WhatsApp <span>↗</span></button>
+          <p class="form-help" id="formHelp">El botón abrirá WhatsApp con tu mensaje listo para enviar cuando configures tu número comercial.</p>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <a class="brand" href="#inicio"><img src="logo/nexati-logo-fondo-oscuro.svg" alt="Nexati" width="124" height="31"></a>
-    <div class="social-links">
-      <a href="https://web.facebook.com/javosiebertp" target="_blank" rel="noopener noreferrer">Facebook</a>
-      <a href="https://www.instagram.com/javosiebertp/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="mailto:contacto@siebertsoporteti.cl">Correo</a>
-    </div>
-    <span>© <span id="year"></span> Nexati · Javier Siebert Parot. Todos los derechos reservados.</span>
-  </footer>
-  <a class="wa-float" id="waFloat" href="#contacto" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" stroke-width="2.6"/></svg>
-  </a>
+  <footer class="site-footer"><a class="brand footer-brand" href="#inicio"><span class="brand-symbol">IS</span><span class="brand-name">ISAR SIEPA<span> DIGITAL</span></span></a><p>Desarrollo web · Software · Aplicaciones web</p><a href="#inicio" class="back-top">Volver arriba ↑</a><small>© <span id="year"></span> ISAR SIEPA Digital. Todos los derechos reservados.</small></footer>
   <script src="app.js"></script>
 </body>
 </html>

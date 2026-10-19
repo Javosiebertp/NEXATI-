@@ -1,49 +1,69 @@
-// Número de WhatsApp: solo dígitos, con código de país y sin "+".
-// Un móvil chileno tiene 11 dígitos (56 + 9 + 8 dígitos). Revisa que este esté completo.
-const WHATSAPP_NUMBER = "5695521699";
+// ISAR SIEPA Digital — comportamiento del menú y formulario.
+// IMPORTANTE: cambia WHATSAPP_NUMBER por tu número comercial con código de país,
+// solo números, sin +, espacios ni guiones. Ejemplo de formato chileno: 56912345678.
+const WHATSAPP_NUMBER = "569XXXXXXXX";
 
-const menuToggle = document.querySelector("#menuToggle");
-const mainNav = document.querySelector("#mainNav");
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+const contactForm = document.getElementById("contactForm");
+const formHelp = document.getElementById("formHelp");
+const year = document.getElementById("year");
 
-function setMenu(open) {
-  mainNav.classList.toggle("open", open);
-  menuToggle.setAttribute("aria-expanded", String(open));
-  menuToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
-  menuToggle.textContent = open ? "✕" : "☰";
+if (year) year.textContent = new Date().getFullYear();
+
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mainNav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+  });
+
+  mainNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mainNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Abrir menú");
+      menuToggle.textContent = "☰";
+    });
+  });
 }
-
-menuToggle.addEventListener("click", () => setMenu(!mainNav.classList.contains("open")));
-mainNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
-document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
-document.addEventListener("click", (e) => {
-  if (!mainNav.contains(e.target) && !menuToggle.contains(e.target)) setMenu(false);
-});
-
-document.querySelector("#year").textContent = new Date().getFullYear();
-
-// Los botones de servicio y plan preseleccionan el formulario
-const serviceSelect = document.querySelector("#service");
-const messageBox = document.querySelector("#message");
 
 document.querySelectorAll("[data-service]").forEach((link) => {
   link.addEventListener("click", () => {
-    const option = [...serviceSelect.options].find((item) => item.text === link.dataset.service);
-    if (option) serviceSelect.value = option.value;
-    if (link.dataset.plan && !messageBox.value.trim()) {
-      messageBox.value = `Quiero consultar por el plan ${link.dataset.plan}.`;
-    }
+    const serviceSelect = document.getElementById("service");
+    if (serviceSelect) serviceSelect.value = link.dataset.service;
   });
 });
 
-// El formulario prepara un mensaje de WhatsApp para que lo revises antes de enviarlo
-document.querySelector("#contactForm").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const name = document.querySelector("#name").value.trim();
-  const service = serviceSelect.value;
-  const message = messageBox.value.trim();
-  const text = `Hola, soy ${name}. Me interesa: ${service}. Consulta: ${message}`;
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
-});
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!contactForm.reportValidity()) return;
 
-// Botón flotante de WhatsApp
-document.querySelector("#waFloat").href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hola, quiero consultar por soporte técnico.")}`;
+    if (WHATSAPP_NUMBER.includes("X") || WHATSAPP_NUMBER.length < 10) {
+      if (formHelp) {
+        formHelp.textContent = "Antes de usar el formulario, abre app.js y reemplaza 569XXXXXXXX por tu número comercial de WhatsApp (solo números).";
+        formHelp.classList.add("form-warning");
+      }
+      alert("Falta configurar el número comercial de WhatsApp en app.js. No se ha enviado ningún mensaje.");
+      return;
+    }
+
+    const data = new FormData(contactForm);
+    const name = String(data.get("name") || "").trim();
+    const business = String(data.get("business") || "").trim();
+    const service = String(data.get("service") || "").trim();
+    const details = String(data.get("details") || "").trim();
+    const message = [
+      "Hola, ISAR SIEPA Digital. Quiero consultar por un proyecto.",
+      `Nombre: ${name}`,
+      business ? `Negocio: ${business}` : "",
+      `Servicio: ${service}`,
+      `Detalles: ${details}`
+    ].filter(Boolean).join("\n");
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
+}
