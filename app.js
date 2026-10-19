@@ -1,69 +1,51 @@
-// ISAR SIEPA Digital — comportamiento del menú y formulario.
-// IMPORTANTE: cambia WHATSAPP_NUMBER por tu número comercial con código de país,
-// solo números, sin +, espacios ni guiones. Ejemplo de formato chileno: 56912345678.
-const WHATSAPP_NUMBER = "569XXXXXXXX";
+// Menú móvil
+const menuToggle = document.querySelector("#menuToggle");
+const mainNav = document.querySelector("#mainNav");
 
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
-const contactForm = document.getElementById("contactForm");
-const formHelp = document.getElementById("formHelp");
-const year = document.getElementById("year");
+menuToggle.addEventListener("click", () => {
+  const isOpen = mainNav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+});
 
-if (year) year.textContent = new Date().getFullYear();
-
-if (menuToggle && mainNav) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = mainNav.classList.toggle("open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
-    menuToggle.textContent = isOpen ? "✕" : "☰";
-  });
-
-  mainNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      mainNav.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Abrir menú");
-      menuToggle.textContent = "☰";
-    });
-  });
-}
-
-document.querySelectorAll("[data-service]").forEach((link) => {
+mainNav.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
-    const serviceSelect = document.getElementById("service");
-    if (serviceSelect) serviceSelect.value = link.dataset.service;
+    mainNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
   });
 });
 
-if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (!contactForm.reportValidity()) return;
+// Año automático en el pie de página
+document.querySelector("#year").textContent = new Date().getFullYear();
 
-    if (WHATSAPP_NUMBER.includes("X") || WHATSAPP_NUMBER.length < 10) {
-      if (formHelp) {
-        formHelp.textContent = "Antes de usar el formulario, abre app.js y reemplaza 569XXXXXXXX por tu número comercial de WhatsApp (solo números).";
-        formHelp.classList.add("form-warning");
-      }
-      alert("Falta configurar el número comercial de WhatsApp en app.js. No se ha enviado ningún mensaje.");
-      return;
-    }
-
-    const data = new FormData(contactForm);
-    const name = String(data.get("name") || "").trim();
-    const business = String(data.get("business") || "").trim();
-    const service = String(data.get("service") || "").trim();
-    const details = String(data.get("details") || "").trim();
-    const message = [
-      "Hola, ISAR SIEPA Digital. Quiero consultar por un proyecto.",
-      `Nombre: ${name}`,
-      business ? `Negocio: ${business}` : "",
-      `Servicio: ${service}`,
-      `Detalles: ${details}`
-    ].filter(Boolean).join("\n");
-
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+// Los enlaces de servicio seleccionan automáticamente la opción del formulario
+document.querySelectorAll("[data-service]").forEach((link) => {
+  link.addEventListener("click", () => {
+    const serviceSelect = document.querySelector("#service");
+    const wanted = link.dataset.service;
+    const option = [...serviceSelect.options].find((item) => item.text === wanted);
+    if (option) serviceSelect.value = option.value;
   });
-}
+});
+
+// Formulario de contacto: prepara un mensaje para WhatsApp.
+// IMPORTANTE: reemplaza el número de ejemplo por el número de Nexati en formato internacional,
+// solo dígitos, incluyendo código de país (Chile: 56), sin +, espacios ni guiones.
+const WHATSAPP_NUMBER = "569XXXXXXXX";
+
+document.querySelector("#contactForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (WHATSAPP_NUMBER.includes("X")) {
+    alert("Antes de usar el formulario, abre app.js y reemplaza 569XXXXXXXX por tu número de WhatsApp en formato internacional.");
+    return;
+  }
+
+  const name = document.querySelector("#name").value.trim();
+  const service = document.querySelector("#service").value;
+  const message = document.querySelector("#message").value.trim();
+
+  const text = `Hola Nexati, soy ${name}. Me interesa: ${service}. Consulta: ${message}`;
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+  window.open(url, "_blank", "noopener,noreferrer");
+});
