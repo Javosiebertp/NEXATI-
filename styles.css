@@ -4,5 +4,129 @@
 @media(max-width:800px){.site-header{height:70px}.menu-toggle{display:block}nav{display:none;position:absolute;z-index:10;top:70px;left:16px;right:16px;padding:20px;background:#0d2034;border:1px solid var(--line);border-radius:12px;flex-direction:column;align-items:stretch;gap:18px}nav.open{display:flex}.nav-cta{text-align:center}.hero{grid-template-columns:1fr;padding-top:55px;gap:20px}.hero-visual{height:330px}.service-grid{grid-template-columns:1fr}.service-card{min-height:unset}.service-link{padding-top:12px}.process-layout,.about-section,.contact-panel{grid-template-columns:1fr;gap:35px}.about-badge{min-height:170px}.contact-section{padding-bottom:55px}.coming-soon{align-items:flex-start}.coming-tag{white-space:normal;text-align:right}.trust-strip{gap:18px 30px}.section{padding-block:70px}}
 @media(max-width:460px){.hero{padding-inline:20px}.hero-actions{flex-direction:column;align-items:stretch}.hero-visual{height:290px}.tech-card{padding:17px}.chip-top{right:0;top:10px}.chip-bottom{left:0;bottom:10px}.floating-chip{font-size:.72rem;padding:9px 11px}.section{padding-inline:20px}.coming-soon{flex-wrap:wrap}.coming-tag{margin-left:36px}.contact-section{padding-inline:14px}.contact-panel{padding:24px 19px}.site-footer{align-items:flex-start;flex-direction:column;gap:12px}}
 
-/* Presentación visual de marca NexaTI Digital */
-.brand-showcase{max-width:var(--max);margin:0 auto;padding:76px 24px;display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:48px}.brand-showcase-copy h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3rem);line-height:1.13;letter-spacing:-.7px;margin:0 0 18px}.brand-showcase-copy h2 span{color:var(--blue)}.brand-showcase-copy>p:not(.eyebrow){color:var(--muted);line-height:1.8;margin-bottom:26px;max-width:420px}.brand-showcase-image{display:block;border:1px solid rgba(73,185,255,.28);border-radius:18px;overflow:hidden;background:#061222;box-shadow:0 24px 65px rgba(0,0,0,.35);transition:transform .25s,border-color .25s}.brand-showcase-image:hover{transform:translateY(-4px);border-color:var(--blue)}.brand-showcase-image img{display:block;width:100%;height:auto}.brand-showcase .button{width:max-content}@media(max-width:800px){.brand-showcase{grid-template-columns:1fr;gap:28px;padding-block:58px}.brand-showcase-copy{max-width:600px}}@media(max-width:460px){.brand-showcase{padding:48px 20px}.brand-showcase-image{border-radius:12px}}
+
+/* Banner principal NexaTI */
+.hero-banner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 18px auto 0;
+  padding: 0 24px;
+}
+.hero-banner-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 540px;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid rgba(73,185,255,.22);
+  border-radius: 18px;
+  box-shadow: 0 24px 75px rgba(0,0,0,.28), 0 0 38px rgba(41,143,215,.08);
+}
+.banner-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 24px 20px 34px;
+}
+.about-badge img {
+  display: block;
+  width: min(100%, 260px);
+  max-height: 130px;
+  object-fit: contain;
+}
+.contact-note { color: var(--cyan); font-size: .88rem; }
+@media (max-width: 600px) {
+  .hero-banner { padding: 0 12px; margin-top: 8px; }
+  .hero-banner-image { border-radius: 10px; }
+  .banner-actions { padding: 16px 18px 26px; }
+  .banner-actions .button { width: 100%; }
+}
+
+
+/* Estilo corporativo claro: limpio, sobrio y accesible */
+:root {
+  --bg: #f5f7fa;
+  --panel: #ffffff;
+  --panel2: #eef2f6;
+  --text: #182433;
+  --muted: #5b6878;
+  --blue: #245b8f;
+  --cyan: #3a819e;
+  --line: #dce3eb;
+  --max: 1160px;
+}
+body { background: var(--bg); color: var(--text); }
+a { color: inherit; }
+.site-header { max-width: 1240px; height: 82px; }
+.brand { color: #142b43; }
+.brand-mark { background: #245b8f; color: #fff; border-radius: 8px; }
+.brand-dot, h1 span, h2 span { color: var(--blue); }
+nav { color: #405065; }
+nav a:hover { color: var(--blue); }
+.nav-cta { border-color: #b9c9d9; color: #173a5a; }
+.nav-cta:hover { background: #eaf1f7; }
+.hero-corporate {
+  max-width: 1240px; margin: 0 auto; padding: 66px 24px 70px;
+  display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 52px;
+}
+.hero-corporate-copy { max-width: 610px; }
+.eyebrow { color: var(--blue); letter-spacing: 1.5px; }
+.hero-corporate h1 { font-size: clamp(2.6rem, 4.6vw, 4.1rem); color: #17283a; }
+.hero-copy { color: var(--muted); line-height: 1.8; }
+.hero-actions { margin-top: 26px; }
+.button { border-radius: 7px; box-shadow: none; }
+.button-primary { background: var(--blue); color: white; }
+.button-primary:hover { background: #19466f; }
+.button-secondary { border-color: #cbd6e1; background: white; color: #24415f; }
+.button-secondary:hover { background: #edf3f8; }
+.hero-note { color: #566678; }
+.mini-shield { border-color: #b6d0d8; color: #276b79; }
+.hero-corporate-visual { min-width: 0; }
+.hero-corporate-visual img {
+  display: block; width: 100%; height: auto; max-height: 420px; object-fit: contain;
+  border: 1px solid #dbe4ec; border-radius: 12px; box-shadow: 0 12px 35px rgba(25, 49, 73, .08);
+}
+.trust-strip { color: #526173; border-color: var(--line); }
+.strip-icon { color: var(--blue); }
+.section-heading>p:last-child, .process-intro>p:last-child, .about-section>div:last-child>p:last-child { color: var(--muted); }
+.service-card, .service-card.featured {
+  background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 4px 16px rgba(26, 48, 72, .035);
+}
+.service-card.featured { border-color: #9bb8d2; }
+.service-icon { background: #edf3f8; color: var(--blue); border-radius: 9px; }
+.service-number { color: #60778d; }
+.service-card>p:not(.service-number) { color: var(--muted); }
+.service-link { color: var(--blue); }
+.coming-soon { background: #fff; border-color: #cbd7e2; }
+.coming-icon, .coming-tag { color: var(--blue); }
+.process-section { background: #edf2f6; border-color: var(--line); }
+.process-step { border-color: #d5dee7; }
+.process-step>span { color: var(--blue); }
+.process-step p { color: var(--muted); }
+.about-badge { background: #fff; border-color: var(--line); color: #60758a; border-radius: 12px; }
+.contact-panel { background: #fff; border-color: var(--line); box-shadow: 0 12px 35px rgba(26, 48, 72, .05); border-radius: 14px; }
+.contact-panel>div>p:not(.eyebrow) { color: var(--muted); }
+.contact-panel label { color: #435366; }
+.contact-panel input, .contact-panel select, .contact-panel textarea {
+  background: #fff; color: #1d2b3a; border-color: #ccd7e2; border-radius: 7px;
+}
+.contact-panel input:focus, .contact-panel select:focus, .contact-panel textarea:focus {
+  border-color: var(--blue); box-shadow: 0 0 0 3px rgba(36, 91, 143, .1);
+}
+.contact-panel small { color: #68788a; }
+.contact-note { color: var(--blue); }
+.site-footer { color: #68788a; border-color: var(--line); }
+.site-footer .brand { color: #142b43; }
+@media (max-width: 800px) {
+  .hero-corporate { grid-template-columns: 1fr; padding-top: 42px; gap: 28px; }
+  .hero-corporate-visual { order: -1; }
+  .hero-corporate-visual img { max-height: 320px; }
+  nav { background: #fff; border-color: var(--line); box-shadow: 0 12px 25px rgba(26,48,72,.12); }
+}
+@media (max-width: 460px) {
+  .hero-corporate { padding-inline: 20px; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .button { width: 100%; }
+}

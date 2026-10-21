@@ -1,136 +1,148 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nexati: soporte informático, desarrollo web y soluciones tecnológicas para personas y pequeños negocios.">
-  <title>Nexati | Soporte TI y Desarrollo Web</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NexaTI: soporte informático, mantenimiento de equipos y desarrollo web para personas, emprendedores y pequeños negocios en Chile.">
+  <meta name="theme-color" content="#07111f">
+  <title>NexaTI | Soporte Informático y Soluciones Digitales</title>
+  <link rel="icon" href="img/Logotipo tecnológico Nexa TI.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Nexati, inicio">
-      <span class="brand-mark">N</span><span>NEXATI<span class="brand-dot">.</span></span>
+    <a class="brand" href="#inicio" aria-label="NexaTI, inicio">
+      <span class="brand-mark">N</span><span>Nexa<span class="brand-dot">TI</span></span>
     </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav id="mainNav">
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menú">☰</button>
+    <nav id="mainNav" aria-label="Navegación principal">
       <a href="#servicios">Servicios</a>
-      <a href="#proceso">Cómo trabajamos</a>
-      <a href="#nosotros">Nosotros</a>
-      <a class="nav-cta" href="#contacto">Solicitar atención</a>
+      <a href="#proceso">Cómo trabajo</a>
+      <a href="#sobre-mi">Sobre NexaTI</a>
+      <a href="#contacto" class="nav-cta">Contactar</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero" id="inicio">
-      <div class="hero-content">
-        <p class="eyebrow"><span class="status-dot"></span> SOLUCIONES TECNOLÓGICAS</p>
-        <h1>Tu tecnología,<br><span>funcionando mejor.</span></h1>
-        <p class="hero-copy">Soporte informático y desarrollo web para personas, emprendedores y pequeños negocios. Tecnología clara, útil y cercana.</p>
+    <section class="hero-corporate" id="inicio">
+      <div class="hero-corporate-copy">
+        <p class="eyebrow">SOPORTE INFORMÁTICO · SOLUCIONES DIGITALES</p>
+        <h1>Tecnología confiable para <span>seguir avanzando.</span></h1>
+        <p class="hero-copy">Soporte informático, mantenimiento de equipos y desarrollo web para personas, emprendedores y pequeños negocios.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#contacto">Hablemos de tu proyecto <span>↗</span></a>
+          <a class="button button-primary" href="#contacto">Solicitar atención <span aria-hidden="true">→</span></a>
           <a class="button button-secondary" href="#servicios">Conocer servicios</a>
         </div>
-        <div class="hero-note"><span class="mini-shield">✓</span> Atención personalizada · Soluciones prácticas</div>
+        <p class="hero-note"><span class="mini-shield">✓</span> Atención clara, responsable y personalizada.</p>
       </div>
-      <div class="hero-visual" aria-label="Panel gráfico tecnológico decorativo">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="tech-card">
-          <div class="tech-card-top"><span class="window-dots">● ● ●</span><span>nexati / system</span></div>
-          <div class="terminal-line"><span class="terminal-green">✓</span> Diagnóstico completado</div>
-          <div class="terminal-line"><span class="terminal-green">✓</span> Sistema optimizado</div>
-          <div class="terminal-line"><span class="terminal-blue">›</span> Solución lista<span class="cursor">_</span></div>
-          <div class="progress-label"><span>Rendimiento del sistema</span><b>Optimizado</b></div>
-          <div class="progress-track"><span></span></div>
-        </div>
-        <div class="floating-chip chip-top"><span>⌘</span> Soporte TI</div>
-        <div class="floating-chip chip-bottom"><span>⌁</span> Desarrollo web</div>
+      <div class="hero-corporate-visual">
+        <img src="img/Tecnología en Buenas Manos.png" alt="NexaTI: tu tecnología en buenas manos" fetchpriority="high">
       </div>
     </section>
-
-    <section class="trust-strip" aria-label="Características">
-      <div><span class="strip-icon">◈</span> Soluciones a medida</div>
-      <div><span class="strip-icon">⌁</span> Enfoque práctico</div>
-      <div><span class="strip-icon">✓</span> Comunicación clara</div>
+    <section class="trust-strip" aria-label="Áreas de servicio">
+      <span><b class="strip-icon">⌘</b> Soporte informático</span>
+      <span><b class="strip-icon">⌁</b> Desarrollo web</span>
+      <span><b class="strip-icon">◇</b> Ciberseguridad básica</span>
+      <span><b class="strip-icon">↗</b> Soluciones digitales</span>
     </section>
 
-    <section class="brand-showcase" aria-labelledby="brandShowcaseTitle">
-      <div class="brand-showcase-copy">
-        <p class="eyebrow">CONOCE NUESTRA IDENTIDAD</p>
-        <h2 id="brandShowcaseTitle">NexaTI Digital.<br><span>Tecnología para avanzar.</span></h2>
-        <p>Soluciones tecnológicas prácticas para personas, emprendedores y pequeños negocios.</p>
-        <a class="button button-primary" href="#servicios">Explorar servicios <span>↗</span></a>
-      </div>
-      <a class="brand-showcase-image" href="nexati-brand.jpg" target="_blank" rel="noopener" aria-label="Ver imagen de marca de Nexati Digital en tamaño completo">
-        <img src="nexati-brand.jpg" alt="Imagen de marca Nexati Digital con identidad azul y negra, soporte informático, desarrollo web y ciberseguridad básica" loading="lazy">
-      </a>
-    </section>
-
-    <section class="section services-section" id="servicios">
+    <section class="section" id="servicios">
       <div class="section-heading">
-        <p class="eyebrow">QUÉ PODEMOS HACER</p>
-        <h2>Servicios para que la tecnología<br><span>trabaje a tu favor.</span></h2>
-        <p>Comenzamos por resolver tus necesidades actuales y crecemos contigo.</p>
+        <p class="eyebrow">QUÉ PUEDO HACER POR TI</p>
+        <h2>Soluciones para que tu tecnología <span>funcione mejor.</span></h2>
+        <p>Apoyo técnico claro y cercano para tus equipos, proyectos y presencia digital.</p>
       </div>
       <div class="service-grid">
         <article class="service-card">
-          <div class="service-icon">⌘</div><p class="service-number">01 / SOPORTE</p>
+          <div class="service-icon" aria-hidden="true">⌘</div>
+          <p class="service-number">01 / SOPORTE</p>
           <h3>Soporte informático</h3>
-          <p>Mantención y optimización de computadores, instalación de software y ayuda con problemas técnicos.</p>
-          <a href="#contacto" class="service-link" data-service="Soporte informático">Consultar servicio <span>↗</span></a>
+          <p>Diagnóstico, mantenimiento, optimización de computadores, instalación de programas y resolución de problemas de Windows.</p>
+          <a class="service-link" href="#contacto" data-service="Soporte informático">Consultar servicio <span>→</span></a>
         </article>
         <article class="service-card featured">
-          <div class="service-icon">⌁</div><p class="service-number">02 / DESARROLLO</p>
-          <h3>Páginas web</h3>
-          <p>Presencia digital para emprendedores y pymes: sitios modernos, adaptables a celulares y fáciles de navegar.</p>
-          <a href="#contacto" class="service-link" data-service="Desarrollo de páginas web">Consultar servicio <span>↗</span></a>
+          <div class="service-icon" aria-hidden="true">⌁</div>
+          <p class="service-number">02 / DIGITAL</p>
+          <h3>Desarrollo web</h3>
+          <p>Páginas web y landing pages adaptables a celulares para profesionales, emprendimientos y pequeños negocios.</p>
+          <a class="service-link" href="#contacto" data-service="Desarrollo web">Consultar servicio <span>→</span></a>
         </article>
         <article class="service-card">
-          <div class="service-icon">◇</div><p class="service-number">03 / SEGURIDAD</p>
-          <h3>Ciberseguridad básica</h3>
-          <p>Orientación en actualizaciones, respaldos, configuración segura y buenas prácticas de protección digital.</p>
-          <a href="#contacto" class="service-link" data-service="Ciberseguridad básica">Consultar servicio <span>↗</span></a>
+          <div class="service-icon" aria-hidden="true">◇</div>
+          <p class="service-number">03 / PROTECCIÓN</p>
+          <h3>Seguridad y respaldo</h3>
+          <p>Buenas prácticas de seguridad, revisión básica, respaldo de información y orientación para proteger tus equipos.</p>
+          <a class="service-link" href="#contacto" data-service="Seguridad y respaldo">Consultar servicio <span>→</span></a>
         </article>
       </div>
-      <div class="coming-soon"><span class="coming-icon">✳</span><div><b>En desarrollo: Nexati Control TI</b><p>Una herramienta propia para organizar clientes, solicitudes y órdenes de trabajo. Pronto compartiremos avances.</p></div><span class="coming-tag">PRÓXIMAMENTE</span></div>
+      <div class="coming-soon">
+        <span class="coming-icon" aria-hidden="true">✦</span>
+        <div><b>¿Tienes una necesidad específica?</b><p>Cuéntame qué necesitas y revisamos juntos la mejor alternativa.</p></div>
+        <span class="coming-tag">ATENCIÓN PERSONALIZADA</span>
+      </div>
     </section>
 
     <section class="process-section" id="proceso">
       <div class="section process-layout">
-        <div class="process-intro"><p class="eyebrow">SIMPLE Y TRANSPARENTE</p><h2>De la consulta<br>a la <span>solución.</span></h2><p>Queremos que sepas qué haremos, por qué y cuál será el siguiente paso.</p></div>
+        <div class="process-intro">
+          <p class="eyebrow">SIMPLE Y TRANSPARENTE</p>
+          <h2>Así trabajamos<span>.</span></h2>
+          <p>Una atención ordenada, con comunicación clara desde el primer contacto.</p>
+        </div>
         <div class="process-steps">
-          <div class="process-step"><span>01</span><div><h3>Cuéntanos qué necesitas</h3><p>Nos explicas el problema o la idea que quieres desarrollar.</p></div></div>
-          <div class="process-step"><span>02</span><div><h3>Evaluamos y cotizamos</h3><p>Definimos el alcance, los tiempos estimados y el valor antes de comenzar.</p></div></div>
-          <div class="process-step"><span>03</span><div><h3>Trabajamos contigo</h3><p>Ejecutamos el servicio y te mantenemos al tanto del avance.</p></div></div>
+          <article class="process-step"><span>01</span><div><h3>Me cuentas el problema</h3><p>Describe tu equipo, proyecto o necesidad y qué resultado esperas.</p></div></article>
+          <article class="process-step"><span>02</span><div><h3>Revisamos la solución</h3><p>Evaluamos el requerimiento y coordinamos el alcance antes de comenzar.</p></div></article>
+          <article class="process-step"><span>03</span><div><h3>Implementación y entrega</h3><p>Realizamos el trabajo acordado y te explico los pasos importantes.</p></div></article>
         </div>
       </div>
     </section>
 
-    <section class="section about-section" id="nosotros">
-      <div class="about-badge"><span class="brand-mark">N</span><span>TECNOLOGÍA CON PROPÓSITO</span></div>
-      <div><p class="eyebrow">SOBRE NEXATI</p><h2>Una solución tecnológica<br>sin complicaciones.</h2><p>Nexati nace para acercar el soporte informático y las herramientas digitales a personas y pequeños negocios. Priorizamos el trato directo, la claridad y soluciones que realmente aporten valor.</p></div>
+    <section class="section about-section" id="sobre-mi">
+      <div class="about-badge">
+        <img src="img/Logotipo tecnológico Nexa TI.png" alt="Logotipo NexaTI" loading="lazy">
+        <span>SOPORTE · TECNOLOGÍA · DIGITAL</span>
+      </div>
+      <div>
+        <p class="eyebrow">SOBRE NEXATI</p>
+        <h2>Tecnología útil, explicada <span>con claridad.</span></h2>
+        <p>NexaTI reúne servicios de soporte informático y soluciones digitales para personas, emprendedores y pequeños negocios. El objetivo es ayudarte a resolver problemas tecnológicos y avanzar con tus ideas digitales mediante una atención cercana y responsable.</p>
+      </div>
     </section>
 
     <section class="contact-section" id="contacto">
       <div class="contact-panel">
-        <div><p class="eyebrow">¿LO VEMOS?</p><h2>Cuéntanos qué necesitas.<br><span>Busquemos una solución.</span></h2><p>Escríbenos para consultar por soporte, una página web o una solución tecnológica para tu negocio.</p></div>
+        <div>
+          <p class="eyebrow">HABLEMOS DE TU PROYECTO</p>
+          <h2>¿En qué te puedo <span>ayudar?</span></h2>
+          <p>Completa los datos y se preparará un mensaje para continuar la consulta por WhatsApp.</p>
+          <p class="contact-note">Atención en Gran Concepción y modalidad remota, según el servicio.</p>
+        </div>
         <form id="contactForm">
-          <label for="name">Tu nombre</label><input id="name" name="name" required placeholder="¿Cómo te llamas?">
-          <label for="service">¿En qué te podemos ayudar?</label>
-          <select id="service" name="service"><option>Soporte informático</option><option>Desarrollo de páginas web</option><option>Ciberseguridad básica</option><option>Nexati Control TI</option><option>Otra consulta</option></select>
-          <label for="message">Cuéntanos brevemente</label><textarea id="message" name="message" rows="3" required placeholder="Describe lo que necesitas..."></textarea>
-          <button class="button button-primary submit-button" type="submit">Preparar mensaje por WhatsApp <span>↗</span></button>
-          <small>El mensaje se abrirá en WhatsApp para que puedas revisarlo antes de enviarlo.</small>
+          <label for="name">Tu nombre</label>
+          <input id="name" name="name" type="text" placeholder="¿Cómo te llamas?" required>
+          <label for="service">Servicio de interés</label>
+          <select id="service" name="service" required>
+            <option value="">Selecciona un servicio</option>
+            <option>Soporte informático</option>
+            <option>Desarrollo web</option>
+            <option>Seguridad y respaldo</option>
+            <option>Otra consulta</option>
+          </select>
+          <label for="message">Cuéntame qué necesitas</label>
+          <textarea id="message" name="message" rows="4" placeholder="Describe brevemente tu consulta..." required></textarea>
+          <button class="button button-primary submit-button" type="submit">Continuar por WhatsApp <span aria-hidden="true">→</span></button>
+          <small>El botón abrirá WhatsApp con un mensaje preparado para que lo revises antes de enviarlo.</small>
         </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <a class="brand" href="#inicio"><span class="brand-mark">N</span><span>NEXATI<span class="brand-dot">.</span></span></a>
-    <p>Soporte TI · Desarrollo web · Tecnología práctica</p>
-    <span>© <span id="year"></span> Nexati. Todos los derechos reservados.</span>
+    <a class="brand" href="#inicio"><span class="brand-mark">N</span><span>Nexa<span class="brand-dot">TI</span></span></a>
+    <p>© <span id="year"></span> NexaTI · Soporte Informático y Soluciones Digitales</p>
+    <a href="https://www.instagram.com/nexati.cl/" target="_blank" rel="noopener noreferrer">Instagram @nexati.cl ↗</a>
   </footer>
+
   <script src="app.js"></script>
 </body>
 </html>
